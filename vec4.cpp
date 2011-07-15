@@ -26,6 +26,22 @@ Vec4::Vec4(const Vec4 &v) {
     vec[3] = v.vec[3];
 }
 
+Vec4::Vec4(const Vec3 &v) {
+    vec[0] = v.vec[0];
+    vec[1] = v.vec[1];
+    vec[2] = v.vec[2];
+    vec[3] = 1.0;
+}
+
+Vec4::Vec4(const Vec2 &v) {
+    vec[0] = v.vec[0];
+    vec[1] = v.vec[1];
+    vec[2] = 0;
+    vec[3] = 1.0;
+}
+
+
+
 
 Vec4 operator+(const Vec4 &op1, const Vec4 &op2) {
     Vec4 result;

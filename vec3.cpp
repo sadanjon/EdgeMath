@@ -23,6 +23,18 @@ Vec3::Vec3(const Vec3 &v) {
     vec[2] = v.vec[2];
 }
 
+Vec3::Vec3(const Vec4 &v) {
+    vec[0] = v.vec[0];
+    vec[1] = v.vec[1];
+    vec[2] = v.vec[2];
+}
+
+Vec3::Vec3(const Vec2 &v) {
+    vec[0] = v.vec[0];
+    vec[1] = v.vec[1];
+    vec[2] = 0;
+}
+
 
 Vec3 operator+(const Vec3 &op1, const Vec3 &op2) {
     Vec3 result;
@@ -73,11 +85,11 @@ double Vec3::magnitude() const {
                 this->vec[2]*this->vec[2]);
 }
 
-Vec3 Vec3::crossProduct(const Vec3 &op) {
+Vec3 Vec3::crossProduct(const Vec3 &op1, const Vec3 &op2) {
     Vec3 result;
-    result.vec[0] = this->vec[1]*op.vec[2] - this->vec[2]*op.vec[1];
-    result.vec[1] = -this->vec[0]*op.vec[2] + this->vec[2]*op.vec[0];
-    result.vec[2] = this->vec[0]*op.vec[1] - this->vec[1]*op.vec[0];
+    result.vec[0] = op1.vec[1]*op2.vec[2] - op1.vec[2]*op2.vec[1];
+    result.vec[1] = -op1.vec[0]*op2.vec[2] + op1.vec[2]*op2.vec[0];
+    result.vec[2] = op1.vec[0]*op2.vec[1] - op1.vec[1]*op2.vec[0];
     return result;
 }
 

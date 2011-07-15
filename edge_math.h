@@ -15,6 +15,8 @@ namespace math {
         Vec4(double x = 0, double y = 0, double z = 0, double w = 1);  
         Vec4(const double *arr4);
         Vec4(const Vec4 &v);
+        Vec4(const Vec3 &v);
+        Vec4(const Vec2 &v);
         double vec[4];
 
         double magnitude() const;
@@ -31,10 +33,12 @@ namespace math {
         Vec3(double x = 0, double y = 0, double z = 0);
         Vec3(const double *arr3);
         Vec3(const Vec3 &v);
+        Vec3(const Vec4 &v);
+        Vec3(const Vec2 &v);
         double vec[3];
 
         double magnitude() const;
-        Vec3 crossProduct(const Vec3 &op);
+        static Vec3 crossProduct(const Vec3 &op1, const Vec3 &op2);
 
         friend Vec3 operator+(const Vec3 &op1, const Vec3 &op2);
         friend Vec3 operator-(const Vec3 &op1, const Vec3 &op2);
@@ -49,6 +53,8 @@ namespace math {
         Vec2(double x = 0, double y = 0);
         Vec2(const double *arr2);
         Vec2(const Vec2 &v);
+        Vec2(const Vec4 &v);
+        Vec2(const Vec3 &v);
         double vec[2];
 
         double magnitude() const;
@@ -68,6 +74,7 @@ namespace math {
         Mat44() {};
         Mat44(const double *arr16);   
         Mat44(const Mat44 &m);
+
         double mat[16];
 
         // col is between 0 and 3
@@ -154,6 +161,8 @@ namespace math {
         friend Mat22 operator*(const Mat22 &op1, const double op2);
         friend Mat22 operator*(const double op1, const Mat22 &op2);
     };
+
+    int *nextPerm4(bool reset);
     
         
 } // namespace math

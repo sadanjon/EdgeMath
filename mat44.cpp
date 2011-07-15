@@ -7,13 +7,11 @@ namespace math {
 #define M(i,j) mat[j*4 + i]
 
 Mat44::Mat44(const double *arr16) {
-    for (int i = 15; i >= 0; --i)
-        mat[i] = arr16[i];
+    memcpy(this->mat, arr16, 16*sizeof(double));    
 }
 
 Mat44::Mat44(const Mat44 &m) {
-    for (int i = 15; i >= 0; --i)
-        mat[i] = m.mat[i];
+    memcpy(this->mat, m.mat, 16*sizeof(double));    
 }
 
 Mat44 operator+(const Mat44 &op1, const Mat44 &op2) {

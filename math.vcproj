@@ -162,6 +162,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\edge_math.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\mat22.cpp"
 				>
 			</File>
@@ -202,6 +206,14 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 		</Filter>
+		<File
+			RelativePath=".\Copyright.txt"
+			>
+		</File>
+		<File
+			RelativePath=".\readme.md"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>
